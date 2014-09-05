@@ -1,0 +1,5 @@
+9-5
+
+puts("stuff") prints string to screen and moves cursor to next line (i think)
+
+
