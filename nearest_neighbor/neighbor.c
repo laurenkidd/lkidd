@@ -36,12 +36,14 @@ int main(int argc, char **argv)
 // Find nearest neighbor
   for (int i = 0 ; i < NUMBER_OF_POINTS ; i++){
 //  Loop over all points
-    double dist1 = 10.0;  //initial value to use to compare distances
+//  set initial distance to use to as distance comparison; large value to ensure it will 
+//  be larger than all actual distances
+    double dist1 = 10.0; 
     for (int j = 0; j < NUMBER_OF_POINTS; j++){
       if (j != i){
 	double dist = fabs(sqrt(pow(p[i].x,2)+pow(p[i].y,2))-sqrt(pow(p[j].x,2)+pow(p[j].y,2)));
 	if (dist < dist1){
-          dist1 = dist;
+          dist1 = dist; //new smallest distance to compare to distances of other indices
           index_array[i] = j;
         }
       }
